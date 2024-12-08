@@ -1,0 +1,342 @@
+/* 全局样式 */
+:root {
+    --primary-color: #007AFF;
+    --background-color: #F5F5F7;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: #1D1D1F;
+    line-height: 1.5;
+}
+
+/* 顶部标题样式 */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #6E6E73;
+    font-size: 1.1rem;
+}
+
+/* 主容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 图片容器样式 */
+.image-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.image-box {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.image-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #1D1D1F;
+}
+
+/* 上传区域样式 */
+.upload-area {
+    border: 2px dashed #CECED2;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: #F5F5F7;
+}
+
+.upload-area img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.upload-area p {
+    color: #6E6E73;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* 预览区域样式 */
+.preview-area {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    background-color: #F5F5F7;
+}
+
+/* 控制面板样式 */
+.control-panel {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.format-select, .size-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.size-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.input-group input {
+    width: 80px;
+    padding: 0.5rem;
+    border: 1px solid #CECED2;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.multiply {
+    color: #6E6E73;
+    padding: 0 0.25rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    cursor: pointer;
+}
+
+/* 按钮样式 */
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.convert-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.convert-btn:hover {
+    background-color: #0066CC;
+}
+
+.convert-btn:disabled {
+    background-color: #CECED2;
+    cursor: not-allowed;
+}
+
+.download-btn {
+    background-color: #34C759;
+    color: white;
+}
+
+.download-btn:hover {
+    background-color: #2DB84C;
+}
+
+.download-btn:disabled {
+    background-color: #CECED2;
+    cursor: not-allowed;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+    }
+    
+    .control-panel {
+        flex-direction: column;
+    }
+    
+    .format-select {
+        width: 100%;
+    }
+}
+
+/* 响应式调整 */
+@media (min-width: 768px) {
+    .control-panel {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+/* 质量控制样式 */
+.size-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quality-slider {
+    width: 100%;
+    max-width: 300px;
+}
+
+.quality-slider input[type="range"] {
+    width: 100%;
+    height: 4px;
+    background: #CECED2;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.quality-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quality-slider input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.quality-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #6E6E73;
+}
+
+#qualityValue {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* 文件大小控制样式 */
+.size-control {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #CECED2;
+}
+
+.size-slider {
+    margin: 1rem 0;
+}
+
+.size-slider input[type="range"] {
+    width: 100%;
+    height: 4px;
+    background: #CECED2;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.size-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-slider input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.size-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #6E6E73;
+}
+
+#currentQuality {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.recompress-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.recompress-btn:hover {
+    background-color: #0066CC;
+} 

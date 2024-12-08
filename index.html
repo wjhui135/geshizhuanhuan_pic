@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片格式转换工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部标题区域 -->
+    <header class="header">
+        <h1>图片格式转换工具</h1>
+        <p class="subtitle">支持 PNG、JPG、WEBP、BMP 等格式互转</p>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 图片处理区域 -->
+        <div class="image-container">
+            <!-- 原图区域 -->
+            <div class="image-box original">
+                <h2>原始图片</h2>
+                <div class="upload-area" id="uploadArea">
+                    <img id="uploadIcon" src="upload-icon.svg" alt="上传图标">
+                    <p>点击或拖拽图片到此处</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                <div class="image-info">
+                    <p>原始格式：<span id="originalFormat">-</span></p>
+                    <p>文件大小：<span id="originalSize">-</span></p>
+                </div>
+            </div>
+
+            <!-- 转换后图片区域 -->
+            <div class="image-box converted">
+                <h2>转换后图片</h2>
+                <div class="preview-area" id="previewArea">
+                    <p>转换后的图片将显示在这里</p>
+                </div>
+                <div class="image-info">
+                    <p>转换格式：<span id="convertedFormat">-</span></p>
+                    <p>文件大小：<span id="convertedSize">-</span></p>
+                    <!-- 添加文件大小控制 -->
+                    <div class="size-control" style="display: none;">
+                        <label>调整文件大小：</label>
+                        <div class="size-slider">
+                            <input type="range" id="sizeSlider" min="10" max="200" value="100">
+                            <div class="size-labels">
+                                <span>10%</span>
+                                <span id="currentQuality">100%</span>
+                                <span>200%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 控制面板 -->
+        <div class="control-panel">
+            <div class="format-select">
+                <label for="targetFormat">选择目标格式：</label>
+                <select id="targetFormat">
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="webp">WEBP</option>
+                    <option value="bmp">BMP</option>
+                </select>
+            </div>
+            
+            <button id="convertBtn" class="convert-btn" disabled>转换图片</button>
+            <button id="downloadBtn" class="download-btn" disabled>下载图片</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
